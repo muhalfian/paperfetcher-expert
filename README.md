@@ -5,7 +5,10 @@
 paperfetcher-expert is a Python-based toolkit to **automate forward & backward snowballing, retrieve metadata**, and **screen academic papers** using both **semantic similarity (SentenceTransformer)** and **keyword matching**.
 This tool is designed to support **Systematic Literature Review (SLR)** and **Mapping Studies**, especially in fields related to NLP, POS Tagging, and Morphologically Rich Languages (MRL).
 
+
 ## 🚀 Key Features
+
+
 ### 🔍 1. Snowballing Search (Forward & Backward)
 
 - Uses **CrossRef COCI API** to fetch:
@@ -15,6 +18,7 @@ This tool is designed to support **Systematic Literature Review (SLR)** and **Ma
     - Forward citations (papers that cite a target paper)
 
 - Supports batch processing from Excel (ID, DOI format)
+
 
 ### 📄 2. Metadata Extraction
 
@@ -34,6 +38,7 @@ This tool is designed to support **Systematic Literature Review (SLR)** and **Ma
 
     - URL and Fields of Study
 
+
 ### 🎯 3. Smart Screening for SLR
 
 - Computes **semantic similarity** between article content (Title + Abstract) and research topic description
@@ -49,7 +54,7 @@ This tool is designed to support **Systematic Literature Review (SLR)** and **Ma
 - Generates Excel sheet with **SimilarityScore + keyword hit counts**
 
 ## 📁 Repository Structure
-```
+```bash
 paperfetcher-expert/
 │
 ├── data/
@@ -69,20 +74,20 @@ paperfetcher-expert/
 
 ## 🛠️ Installation
 ### 1️⃣ Clone the repository
-```
+```bash
 git clone https://github.com/your-username/paperfetcher-expert.git
 cd paperfetcher-expert
 ```
 
 ### 2️⃣ Install dependencies
-```
+```bash
 pip install -r requirements.txt
 ```
 
 ## 📦 Dependencies
 
 Minimal required libraries:
-```
+```bash
 pandas
 requests
 openpyxl
@@ -93,6 +98,7 @@ torch
 ```
 
 ## ▶️ Usage Guide
+
 ### 🧭 Step 1: Prepare Input File
 
 Ensure your `data/articles.xlsx` contains a sheet named `"Primary"` with columns:
@@ -105,12 +111,12 @@ Ensure your `data/articles.xlsx` contains a sheet named `"Primary"` with columns
 ### 🔄 Step 2: Run Snowballing
 
 **Backward Citations**
-```
+```bash
 python snowball_backward.py
 ```
 
 **Forward Citations**
-```
+```bash
 python snowball_forward.py
 ```
 
@@ -118,18 +124,20 @@ Outputs saved to `/data/backward_articles.xlsx` and `/data/forward_articles.xlsx
 
 
 ### 🧠 Step 3: Screen Articles (Semantic Similarity)
-```
+```bash
 python screening_semantic.py
 ```
 
 Output file:
-```
+```bash
 ➡️ data/backward_screening.xlsx
 ```
 
 Includes columns:
 
 | DOI	| Title	| SimilarityScore	| pos_tagging	| ambiguity	| MRL	| URL |
+|---|---|---|---|---|---|---|
+
 
 ## ⭐ Scoring Interpretation
 | Score Type	| Meaning |
@@ -147,6 +155,7 @@ You can apply thresholds such as:
 
 - `ambiguity ≥ 1`
 
+
 ## 📌 Roadmap
 
 - 🔜 Streamlit-based user interface
@@ -157,6 +166,7 @@ You can apply thresholds such as:
 
 - 🔜 Integration with Zotero and Mendeley
 
+
 ## 🙌 Acknowledgments
 
 - Semantic Scholar API
@@ -166,6 +176,7 @@ You can apply thresholds such as:
 - SentenceTransformers
 
 - Pandas, PyTorch, scikit-learn
+
 
 ## 📬 Contact & Contribution
 
